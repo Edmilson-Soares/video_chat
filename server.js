@@ -16,7 +16,7 @@ const io = require('socket.io')(server);
 const RoomService = require('./RoomService')(io);
 io.sockets.on('connection', RoomService.listen);
 io.sockets.on('error', e => console.log(e));
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/'));
 app.get('*', function(req, res) {
     res.sendFile(`${__dirname}/index.html`);
 });
